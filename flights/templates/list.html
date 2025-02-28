@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Lista de Vuelos</title>
+</head>
+<body>
+    <h1>Lista de Vuelos</h1>
+    <ul>
+        {% for flight in flights %}
+        <li>
+            <strong>ID:</strong> {{ flight.id }}<br>
+            <strong>Nombre:</strong> <span class="{% if flight.type == 'Internacional' %}internacional{% endif %}">{{ flight.name }}</span><br>
+            <strong>Tipo:</strong> <span class="{% if flight.type == 'Nacional' %}nacional{% endif %}">{{ flight.typee }}</span><br>
+            <strong>Precio:</strong> ${{ flight.price }}
+        </li>
+        <hr>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Volver al Inicio</a>
+</body>
+</html>

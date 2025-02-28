@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Registrar Vuelo</title>
+</head>
+<body>
+    <h1>Registrar un Nuevo Vuelo</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Registrar</button>
+    </form>
+    <a href="{% url 'home' %}">Volver al Inicio</a>
+</body>
+</html>
